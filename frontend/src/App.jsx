@@ -9,12 +9,12 @@ import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-    
+
   const [showSplash, setShowSplash] = useState(true);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -28,10 +28,18 @@ function App() {
   return (
     <Router>
       <AnimatePresence>{showSplash && <Startlogo />}</AnimatePresence>
-      <AnimatePresence>{showHeader && <Homepage isOpen={isOpen} toggleSidebar={toggleSidebar} />}</AnimatePresence>
-      
-  </>
+      <AnimatePresence>
+        {showHeader && (
+          <Routes>
+            <Route path="/" element={<Homepage isOpen={isOpen} toggleSidebar={toggleSidebar} />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/aboutus" element={<AboutPage />} />
+            <Route path="/contactus" element={<ContactPage />} />
+          </Routes>
+        )}
+      </AnimatePresence>
+    </Router>
   );
 }
-
-export default App;
+export default App

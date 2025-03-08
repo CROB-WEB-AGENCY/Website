@@ -12,7 +12,7 @@ export default function HeroPanel({ isOpen }) {
       className={`relative flex flex-col items-center justify-center text-white  min-h-screen transition-all duration-500
       ${isOpen ? "backdrop-blur-lg brightness-50" : ""}`}
     >
-      <div className="absolute inset-0  min-h-screen"></div>
+      <div className="absolute inset-0 bg-[url('./icons/background1.png')] bg-cover bg-center min-h-screen"></div>
       {!isOpen && (
         <>
           <motion.div
@@ -41,7 +41,7 @@ export default function HeroPanel({ isOpen }) {
               initial={!hasRendered?{ opacity: 0, y: 5 }: {}}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2, delay: 0.5, ease: "easeOut" }}       
-             className="absolute top-[70%] sm:top-[75%] self-start px-6 py-2 sm:px-8 sm:py-3 ml-6 sm:ml-10 text-sm sm:text-lg font-semibold border-2 border-white rounded-full bg-[#222121]/20 shadow-[0px_4px_5.5px_rgba(255, 255, 255, 1)] transition"
+             className="absolute top-[70%] sm:top-[75%] self-start px-6 py-2 sm:px-8 sm:py-3 ml-10 sm: text-sm sm:text-lg font-semibold border-2 border-white rounded-full bg-[#222121]/20 shadow-[0px_4px_5.5px_rgba(255, 255, 255, 1)] transition"
           >
             KNOW MORE
           </motion.button>

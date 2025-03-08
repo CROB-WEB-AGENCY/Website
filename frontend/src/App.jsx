@@ -8,12 +8,8 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
 
-    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-    
+
   const [showSplash, setShowSplash] = useState(true);
   const [showHeader, setShowHeader] = useState(false);
 
@@ -27,7 +23,7 @@ function App() {
   return (
    <>
       <AnimatePresence>{showSplash && <Startlogo />}</AnimatePresence>
-      <AnimatePresence>{showHeader && <Homepage isOpen={isOpen} toggleSidebar={toggleSidebar} />}</AnimatePresence>
+      <AnimatePresence>{showHeader && <Homepage  />}</AnimatePresence>
       
   </>
   );

@@ -5,13 +5,13 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-10 px-6 text-center">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-[#3D2A58] rounded-full px-6 py-2 flex items-center justify-between w-full max-w-md mx-auto shadow-lg">
-          <img src="/logos/logo_full_white.png" className="text-white text-xl font-bold w-6 h-6" />
-          <p className="text-white text-sm">&copy;2023-2025 Crob Inc.</p>
-          <div className="flex space-x-3">
-            <Linkedin size={20} className="text-white cursor-pointer" />
-            <Instagram size={20} className="text-white cursor-pointer" />
-            <X size={20} className="text-white cursor-pointer" />
+        <div className="bg-[#3D2A58] rounded-full px-6 py-2 flex items-center justify-between w-full h-12 sm:h-16 md:h-20 mx-auto shadow-lg">
+          <img src="/logos/logo_full_white.png" className=" w-auto h-5/6" />
+          <p className="text-white text-sm md:text-md">&copy;2023-2025 Crob Inc.</p>
+          <div className="flex space-x-3 md:space-x-5">
+            <Linkedin size={20} className="text-white cursor-pointer md:scale-150 " />
+            <Instagram size={20} className="text-white cursor-pointer md:scale-150" />
+            <X size={20} className="text-white cursor-pointer md:scale-150" />
           </div>
         </div>
         <p className=" text-lg font-medium my-6">Design. Develop. Dominate .</p>

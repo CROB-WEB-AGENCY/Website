@@ -14,7 +14,7 @@ export default function Navigationpanel({ isOpen }) {
       animate={{ scale: isOpen ? 1 : 0.5, opacity: isOpen ? 1 : 0 }}
       transition={{ duration: 0.1, ease: "easeOut" }}
       className={`fixed inset-0 flex justify-center items-center z-40 
-                  w-19/20 h-4/6 bg-[#A488CB]/20 backdrop-blur-lg px-8 mt-32 mx-auto
+                  w-19/20 h-4/6 bg-white/15 backdrop-blur-lg px-12 mt-32 mr-3 ml-3
                   shadow-lg rounded-xl border-[#858484] transition-all`}
       style={{ display: isOpen ? "flex" : "none" }}
     >

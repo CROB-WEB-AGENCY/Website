@@ -19,7 +19,7 @@ const Accordion = ({ items, allowMultiple = false }) => {
     }
 
     return (
-        <div className="w-full">
+        <div className="w-full bg-transparent">
             {items.map((item) => (
                 <AccordionItem
                     key={item.id}

@@ -56,13 +56,13 @@ function SpotlightFeature () {
   return (
     <motion.div
       ref={ref}
-      className="bg-[#BEBEBE33] rounded-4xl shadow-lg p-4 w-full text-left mt-8 ml-20 mr-20"
+      className="bg-[#BEBEBE33] rounded-4xl shadow-lg p-4 w-full  mx-auto text-left mt-8"
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: 0.3 }}
-    >  <div className="flex justify-between w-full">
+      transition={{ duration: 0.6, delay: 0.3 }}>
+     <div className="flex justify-between w-full">
       <motion.h2
-        className="w-2/3 font-roboto text-[#120101] font-semibold text-2xl leading-[36px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
+        className="text-2xl md:text-3xl w-2/3 font-roboto text-[#120101] font-semibold  leading-[36px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.5 }}
@@ -71,7 +71,7 @@ function SpotlightFeature () {
       </motion.h2>
       
       <motion.p
-        className="w-1/3 mt-2 -mr-2 font-roboto text-[#120101] font-semibold text-base leading-[36px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
+        className="text-lg w-1/3 mt-2 -mr-auto font-roboto text-[#120101] font-semibold text-base leading-[36px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.7 }}
@@ -80,29 +80,35 @@ function SpotlightFeature () {
       </motion.p>
       </div>
       <motion.p
-        className="w-[73%] mt-6 font-roboto font-semibold text-lg leading-[27.5px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
+        className="text-lg  w-[73%] mt-6 font-roboto font-semibold  leading-[27.5px] tracking-normal drop-shadow-[0px_4px_8.6px_0px_#C0B1FF] "
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.9 }}
       >
         {spotlightData[currentIndex].description}
       </motion.p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 ">
       <motion.button
-        className="mt-6 border-2 border-black text-black font-medium font-roboto px-7 py-2 rounded-full flex items-center gap-2 shadow-[0px_4px_8.6px_0px_#C0B1FF] drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
+        className="mt-6 border-2 w-fit h-fit border-black text-black font-medium font-roboto px-7 py-2 rounded-full flex items-center gap-3 shadow-[0px_4px_8.6px_0px_#C0B1FF] drop-shadow-[0px_4px_8.6px_0px_#C0B1FF]"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.9 }}
       >
         SEE MORE
       </motion.button>
-      <motion.img
-        src={spotlightData[currentIndex].image}
-        alt="Spotlight"
-        className="mt-15 w-full max-w-md rounded-lg mb-20"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 1.1 }}
-      />
+      <motion.div
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 1.1 }}
+        >
+          <img
+            src={spotlightData[currentIndex].image}
+            alt="Spotlight"
+            className="w-full mt-15 md:mt-0 max-w-sm md:max-w-md rounded-lg"
+          />
+        </motion.div>
+      </div>
     <div className="flex justify-center items-center w-full mt-4 gap-10 ">
     {currentIndex > 0 && (<button
           onClick={handlePrev}
